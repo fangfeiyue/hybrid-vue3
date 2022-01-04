@@ -1,0 +1,6 @@
+// $rootFontSize: 375 / 10; 这样写会报错 Using / for division is deprecated and will be removed in Dart Sass 2.0.0. 具体原因及请看 https://sass-lang.com/documentation/breaking-changes/slash-div
+
+$rootFontSize: calc(375 / 10);
+@function px2rem($px) {
+  @return calc($px / $rootFontSize) + rem;
+}

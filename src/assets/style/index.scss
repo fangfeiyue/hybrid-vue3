@@ -1,0 +1,12 @@
+@import './reset.scss';
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #333;
+  /* 这里将 fontSize 设置为 0，是为了防止图片间产生间隙 */
+  font-size: 0;
+  /* 不允许选中文本 */
+  user-select: none;
+}
