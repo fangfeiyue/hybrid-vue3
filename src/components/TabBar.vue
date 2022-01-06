@@ -9,19 +9,28 @@ const tabBarData = ref([
     name: "首页",
     nImg: `${getImgPath("home-n.svg")}`,
     hImg: `${getImgPath("home-h.svg")}`,
+    component: "Home",
   },
   {
     name: "购物车",
     nImg: `${getImgPath("shopping-n.svg")}`,
     hImg: `${getImgPath("shopping-h.svg")}`,
+    component: "Shopping",
   },
   {
     name: "我的",
     nImg: `${getImgPath("my-n.svg")}`,
     hImg: `${getImgPath("my-h.svg")}`,
+    component: "My",
   },
 ]);
 const selectedIndex = ref(0);
+
+const emit = defineEmits(["changeTab"]);
+const changeTab = (item, index) => {
+  selectedIndex.value = index;
+  emit("changeTab", item);
+};
 </script>
 <template>
   <div class="tab-bar">
@@ -29,6 +38,7 @@ const selectedIndex = ref(0);
       class="tab-bar-item"
       v-for="(item, index) in tabBarData"
       :key="item.name"
+      @click="changeTab(item, index)"
     >
       <img
         class="tab-bar-item-img"
