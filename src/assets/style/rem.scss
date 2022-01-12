@@ -4,3 +4,14 @@ $rootFontSize: calc(375 / 10);
 @function px2rem($px) {
   @return calc($px / $rootFontSize) + rem;
 }
+
+$infoSize: px2rem(14);
+$titleSize: px2rem(16);
+$minInfoSize: px2rem(12);
+$marginSize: px2rem(8);
+$navBarHeight: px2rem(44);
+$radiusSize: px2rem(6);
+$goodsOptionsHeight: px2rem(46);
+$checkSize: px2rem(18);
+$stateBarHeight: px2rem(22);
+$iphoneXBottomHeight: px2rem(34);
