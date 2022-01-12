@@ -1,11 +1,12 @@
 <script setup>
-import { ref } from "@vue/reactivity";
+import { markRaw, ref, shallowRef } from "@vue/reactivity";
 import TabBar from "../components/TabBar.vue";
 import Home from "../components/Home.vue";
 import Shopping from "../components/Shopping.vue";
 import My from "../components/My.vue";
 
-const currentComponent = ref(Home);
+// const currentComponent = ref(Home);
+const currentComponent = shallowRef(Home);
 
 const changeTab = (item) => {
   let cmp = null;
@@ -36,5 +37,7 @@ const changeTab = (item) => {
   width: 100%;
   height: 100%;
   font-size: 20px;
+  display: flex;
+  flex-direction: column;
 }
 </style>
