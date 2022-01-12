@@ -22,6 +22,7 @@ const pagination = {
 </script>
 <template>
   <swiper
+    :modules="[Pagination]"
     :loop="true"
     :autoplay="true"
     :pagination="{ clickable: true }"
