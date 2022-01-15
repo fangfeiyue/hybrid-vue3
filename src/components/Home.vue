@@ -41,12 +41,6 @@ onMounted(() => {
 </script>
 <template>
   <div class="home">
-    <!-- <Swiper :swiperImgs="swiperImgs" height="184px" />
-    <Activity>
-      <div class="activity-item">
-        <img v-for="item in activityData" :src="item.icon" :key="item.src" />
-      </div>
-    </Activity> -->
     <div class="home-content">
       <Swiper :swiperImgs="swiperImgs" height="184px" />
       <Activity>
@@ -56,6 +50,11 @@ onMounted(() => {
       </Activity>
       <ModeOptions />
       <Seconds :secondsData="secondsData" />
+      <Activity>
+        <div class="activity-buying">
+          <img src="../assets/img/haoHuoQiang.gif" />
+        </div>
+      </Activity>
     </div>
   </div>
 </template>
@@ -73,6 +72,13 @@ onMounted(() => {
       img {
         display: inline-block;
         width: 33.3%;
+      }
+    }
+    .activity-buying {
+      background-color: white;
+      margin-top: $marginSize;
+      img {
+        width: 100%;
       }
     }
   }
