@@ -21,7 +21,7 @@ const pagination = {
     @slideChange="onSlideChange"
   >
     <swiper-slide v-for="item in swiperImgs" :key="item"
-      ><img :style="{ height: height }" :src="item.icon"
+      ><img :style="{ height: height, width: '100%' }" :src="item.icon"
     /></swiper-slide>
   </Swiper>
 </template>
