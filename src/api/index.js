@@ -14,3 +14,11 @@ export function fetchActivity(params) {
 		data: params
 	});
 }
+
+export function fetchSeconds(params) {
+	return request({
+		url: '/seconds',
+		method: 'get',
+		data: params
+	});
+}

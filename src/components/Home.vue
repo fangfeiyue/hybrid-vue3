@@ -1,7 +1,8 @@
 <script setup>
-import { fetchSwiper, fetchActivity } from "../api/index";
+import { fetchSwiper, fetchActivity, fetchSeconds } from "../api/index";
 import Swiper from "./Swiper.vue";
 import Activity from "./Activity.vue";
+import Seconds from "./Seconds.vue";
 import ModeOptions from "./ModeOptions.vue";
 import { ref } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
@@ -26,9 +27,16 @@ const getActivity = async () => {
   activityData.value = res.list;
 };
 
+const secondsData = ref([]);
+const getSeconds = async () => {
+  const res = await fetchSeconds();
+  secondsData.value = res.list;
+};
+
 onMounted(() => {
   getSwiper();
   getActivity();
+  getSeconds();
 });
 </script>
 <template>
@@ -47,6 +55,7 @@ onMounted(() => {
         </div>
       </Activity>
       <ModeOptions />
+      <Seconds :secondsData="secondsData" />
     </div>
   </div>
 </template>
