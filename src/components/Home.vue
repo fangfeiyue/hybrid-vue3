@@ -63,6 +63,7 @@ onMounted(() => {
 .home {
   width: 100%;
   height: 100%;
+  overflow-y: auto;
   &-content {
     height: 100%;
     .activity-item {
