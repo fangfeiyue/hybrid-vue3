@@ -11,5 +11,6 @@
   position: relative;
   max-height: px2rem(160);
   z-index: 2;
+  background-color: #fff;
 }
 </style>
