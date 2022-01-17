@@ -3,6 +3,7 @@ import { fetchSwiper, fetchActivity, fetchSeconds } from "../api/index";
 import Swiper from "./Swiper.vue";
 import Activity from "./Activity.vue";
 import Seconds from "./Seconds.vue";
+import Goods from "./Goods.vue";
 import ModeOptions from "./ModeOptions.vue";
 import { ref } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
@@ -55,6 +56,7 @@ onMounted(() => {
           <img src="../assets/img/haoHuoQiang.gif" />
         </div>
       </Activity>
+      <Goods />
     </div>
   </div>
 </template>
