@@ -22,3 +22,11 @@ export function fetchSeconds(params) {
 		data: params
 	});
 }
+
+export function fetchGoods(params) {
+	return request({
+		url: '/goods',
+		method: 'get',
+		data: params
+	});
+}
