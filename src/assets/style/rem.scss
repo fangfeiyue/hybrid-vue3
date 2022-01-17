@@ -15,3 +15,10 @@ $goodsOptionsHeight: px2rem(46);
 $checkSize: px2rem(18);
 $stateBarHeight: px2rem(22);
 $iphoneXBottomHeight: px2rem(34);
+
+.single-row-text {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
