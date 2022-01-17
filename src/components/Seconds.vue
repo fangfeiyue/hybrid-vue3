@@ -7,7 +7,7 @@ defineProps(["secondsData"]);
   <div class="seconds">
     <div class="seconds-wrap">
       京东秒杀
-      <CountDown />
+      <CountDown endHour="17" />
     </div>
     <div class="seconds-content-box">
       <div class="seconds-content">
@@ -31,6 +31,7 @@ defineProps(["secondsData"]);
     display: flex;
     padding: $marginSize;
     font-size: $titleSize;
+    align-items: center;
   }
   .seconds-content-box {
     height: px2rem(111);
