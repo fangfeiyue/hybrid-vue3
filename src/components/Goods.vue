@@ -1,7 +1,9 @@
 <script setup>
+import Direct from "./Direct.vue";
+import Stockout from "./Stockout.vue";
 import { ref } from "@vue/reactivity";
 import { fetchGoods } from "../api/index";
-import { nextTick, onMounted } from "@vue/runtime-core";
+import { onMounted } from "@vue/runtime-core";
 
 const goods = ref([]);
 async function getGoods() {
@@ -64,7 +66,14 @@ onMounted(async () => {
     >
       <img :style="{ height: item.height }" :src="item.img" alt="" />
       <div class="goods-desc">
-        <div class="goods-name">{{ item.name }}</div>
+        <div
+          class="goods-name"
+          :style="{ color: !item.isHave ? '#999999' : '' }"
+        >
+          <Direct v-if="item.isDirect" />
+          <Stockout v-if="!item.isHave" />
+          {{ item.name }}
+        </div>
         <div class="goods-sale-info">
           <span>{{ item.price }}</span>
           <span>销量{{ item.volume }}</span>
