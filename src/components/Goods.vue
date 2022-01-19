@@ -15,20 +15,14 @@ async function getGoods() {
 const goodsItems = ref([]);
 const goodsItemStyles = ref([]);
 const setRef = (el) => {
-  console.log(2);
   goodsItems.value.push(el);
 };
 function setLayoutStyle() {
-  console.log(1);
   let leftHeightTotal = 0,
     rightHeightTotal = 0,
     goodsItemStyle = {};
   goodsItems.value.forEach((item) => {
     const height = item.clientHeight + 8;
-    console.log(
-      "🚀 ~ file: Goods.vue ~ line 26 ~ goodsItems.value.forEach ~ height",
-      height
-    );
     if (leftHeightTotal <= rightHeightTotal) {
       goodsItemStyle = {
         left: "0",
@@ -42,7 +36,6 @@ function setLayoutStyle() {
       };
       rightHeightTotal += height;
     }
-    console.log(goodsItemStyle);
     goodsItemStyles.value.push(goodsItemStyle);
   });
 }
